@@ -1,0 +1,63 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background-color: black;
+	color: white;
+}
+
+.player1{
+	background-color: green;
+}
+.container{
+	height: 900px;
+ 	width: 900px;
+ 	margin: 0 auto;
+}
+
+.square{
+	display: inline-block;
+	height: 300px;
+	width: 300px;
+	border-width: 5px;
+	border-color: white;
+	text-align: center;
+	line-height: 300px;
+	font-size: 150px;
+}
+
+#square1{
+	border-bottom-style: solid;
+	border-right-style: solid;
+}
+
+#square2{
+	border-bottom-style: solid;
+}
+
+#square3{
+	border-bottom-style: solid;
+	border-left-style: solid;
+}
+
+#square4{
+	border-right-style: solid;
+}
+#square6{
+	border-left-style: solid;
+}
+
+#square7{
+	border-top-style: solid;
+	border-right-style: solid;
+}
+#square8{
+	border-top-style: solid;
+}
+
+#square9{
+	border-top-style: solid;
+	border-left-style: solid;
+}
