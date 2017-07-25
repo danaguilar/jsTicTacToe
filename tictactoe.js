@@ -23,19 +23,29 @@ var game = {
 		else{
 			this.activePlayer = "X";
 		}
+		board.xdiv.classList.toggle('hidden');
+		board.odiv.classList.toggle('hidden');
 	},
 
 	checkVictory : function(){
 		this.winConditions.forEach(this.checkThreeSquare);
 		if(this.victory){
-			console.log('Victory!');
+			this.win();
 		}
 	},
 
-	checkThreeSquare(squareA){
-		if(squareA[0].innerHTML == squareA[1].innerHTML && squareA[1].innerHTML == squareA[2].innerHTML){
-			game.victory =  squareA[0].innerHTML;
+	checkThreeSquare : function(squareA){
+		if(board[squareA[0]].innerHTML != ' ' && board[squareA[0]].innerHTML == board[squareA[1]].innerHTML && board[squareA[1]].innerHTML == board[squareA[2]].innerHTML){
+			game.victory = squareA;
 		}
+	},
+
+	win : function(){
+		this.victory.forEach(function(ele){
+			board[ele].className = "square win";
+		})
+		var victoryToken = board[this.victory[0]].innerHTML;
+		alert(victoryToken + " has won!\nClick OK to play again");
 	}
 };
 
@@ -52,6 +62,14 @@ var board = {
 				square.textContent = " ";
 				container.appendChild(square);
 			}
+			board.xdiv = document.createElement("div");
+			board.xdiv.setAttribute('class', 'Xdiv turn hidden');
+			board.xdiv.innerHTML = "X";
+			board.odiv = document.createElement("div");
+			board.odiv .setAttribute('class', 'Odiv turn');
+			board.odiv .innerHTML = "O";
+			document.body.appendChild(board.xdiv);
+			document.body.appendChild(board.odiv);
 			document.body.appendChild(container);
 			board.s1 = document.getElementById("square1");
 			board.s2 = document.getElementById("square2");

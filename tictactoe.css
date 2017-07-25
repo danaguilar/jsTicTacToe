@@ -8,24 +8,50 @@ body{
 	color: white;
 }
 
+.turn{
+	position: absolute;
+	height:  20vh;
+	width: 20vh;
+	text-align: center;
+	line-height: 20vh;
+	font-size: 20vh;
+	font-weight: bold;
+}
+
+.hidden{
+	display: none;
+}
+
+.xdiv{
+	right: 0;
+}
+
+.odiv{
+	left: 0;
+}
 .player1{
 	background-color: green;
 }
 .container{
-	height: 900px;
- 	width: 900px;
+	height: 100vh;
+ 	width: 100vh;
  	margin: 0 auto;
 }
 
 .square{
 	display: inline-block;
-	height: 300px;
-	width: 300px;
-	border-width: 5px;
+	height: 33vh;
+	width: 33vh;
+	border-width: .5vh;
 	border-color: white;
 	text-align: center;
-	line-height: 300px;
-	font-size: 150px;
+	line-height: 33vh;
+	font-size: 17vh;
+	vertical-align: top;
+}
+
+.win{
+	background: darkgreen;
 }
 
 #square1{
